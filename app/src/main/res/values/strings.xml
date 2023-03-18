@@ -19,9 +19,9 @@
     </string-array>
 
     <string-array name="duration">
-        <item>Hours</item>
+        <item>Hour(s)</item>
         <item>Minutes</item>
-        <item>Seconds</item>
+
 
 
     </string-array>

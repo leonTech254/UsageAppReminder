@@ -9,6 +9,7 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -24,6 +25,7 @@ import android.widget.Toast;
 
 public class ManageTimer extends AppCompatActivity {
     private static final String USAGE_STATS = "android.permission.USAGE_STATS";
+    private SharedPreferences sharedPreferences;
 
 
     @Override
@@ -53,9 +55,24 @@ public class ManageTimer extends AppCompatActivity {
     public  void SetTimer(View view)
     {
 //        TextView fruits=(TextView) findViewById(R.id.textView);
-//        Spinner fruit=(Spinner) findViewById(R.id.spinner);
-//        String selected=String.valueOf(fruit.getSelectedItem());
+        Spinner durationSpinner= findViewById(R.id.duration);
+        Spinner durationtypeSpinner= findViewById(R.id.durationtype);
+
+        String duration=String.valueOf(durationSpinner.getSelectedItem());
+        String durationtype=String.valueOf(durationtypeSpinner.getSelectedItem());
 //        fruits.setText(selected);
+        String time="set "+duration+" "+ durationtype;
+        Toast.makeText(this, time, Toast.LENGTH_SHORT).show();
+
+        sharedPreferences =getSharedPreferences("time", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("duration",duration);
+        editor.putString("durationType",durationtype);
+        editor.apply();
+
+
+
+
 
 
         // Get a reference to the NotificationManager
@@ -64,8 +81,8 @@ public class ManageTimer extends AppCompatActivity {
 // Create the notification
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, "default")
                 .setSmallIcon(R.drawable.baseline_data_usage_24)
-                .setContentTitle("My Notification")
-                .setContentText("This is my notification")
+                .setContentTitle("LeonTeqSecurity")
+                .setContentText("YouTube Application \nwe will notify you after "+ time +" Thank you.")
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
 // Display the notification
@@ -107,6 +124,14 @@ public class ManageTimer extends AppCompatActivity {
 
 
 
+
+
+    }
+    public  void  StopServices(View view)
+    {
+        Intent intent = new Intent(this, YouTubeUsageTrackerService.class);
+        stopService(intent);
+        Toast.makeText(this, "Services Stop!!", Toast.LENGTH_SHORT).show();
 
 
     }

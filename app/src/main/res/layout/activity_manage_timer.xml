@@ -49,7 +49,7 @@
 
                 />
             <Spinner
-                android:id="@+id/spinner"
+                android:id="@+id/duration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/numbers"
@@ -66,7 +66,7 @@
                 android:text="DURATION TYPE"
                 />
             <Spinner
-                android:id="@+id/duration"
+                android:id="@+id/durationtype"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:entries="@array/duration"
@@ -84,6 +84,17 @@
             android:text="SAVE SETTINGS"
             android:layout_marginTop="20dp"
             android:onClick="SetTimer"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Stop App tracking"
+            android:layout_marginTop="20dp"
+            android:onClick="StopServices"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+
+
             />
 
 
