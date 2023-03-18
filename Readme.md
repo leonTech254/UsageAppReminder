@@ -1,3 +1,4 @@
+# UsageAppReminder
 Welcome to UsageAppReminder - the perfect tool for managing your time on YouTube!
 
 Do you find yourself spending too much time on YouTube, scrolling through endless videos and losing track of time? With our app, you can easily track how much time you spend on YouTube and get notified when you exceed your set time limit.
