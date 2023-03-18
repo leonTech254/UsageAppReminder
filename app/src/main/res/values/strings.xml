@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">UsageAppReminder</string>
+
+    <string name="welcome">Do not let YouTube consume your precious time - take control with UsageAppReminder today!</string>
+    <string-array name="numbers">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+
+
+
+    </string-array>
+
+    <string-array name="duration">
+        <item>Hours</item>
+        <item>Minutes</item>
+        <item>Seconds</item>
+
+
+    </string-array>
 </resources>
